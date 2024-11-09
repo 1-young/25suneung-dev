@@ -106,4 +106,17 @@
                     // 이름이 허용된 경우, 인사 메시지 표시
                     document.getElementById("greeting").innerHTML = name + "아 안녕!";
                     // 메시지 박스 보이기
-                    document.getElementById("messageBox").
+                    document.getElementById("messageBox").style.display = "block";
+                    // 오류 메시지 숨기기
+                    document.getElementById("errorMessage").style.display = "none";
+                } else {
+                    // 허용된 이름이 아닐 경우 오류 메시지
+                    document.getElementById("errorMessage").style.display = "block";
+                    document.getElementById("messageBox").style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
