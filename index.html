@@ -59,11 +59,11 @@
     <p>풀네임 넣어도 작동하게 변경.</p>
     <p>쌤이름 넣으면 작동 안하니 수강생 이름 아무나 집어넣어주세요!</p></p>
     <p>이페이지는 절대로 공유 금지!</p>
-    <p>공유 사이트에는 수능 당일이 지나면 메시지는 자동적으로 볼수없게 설정되어있습니다</p>
+    <p>공유 사이트에는 수능이 시작하면 "2025학년도 대학수학능력시험 모두 고생많으셨습니다!" 문구만 출력되게 만들어져있습니다</p>
     
     <!-- 카운트다운 또는 종료 메시지 -->
     <div id="countdown" class="countdown"></div>
-    <div id="endedMessage" class="ended-message" style="display: none;">열람 기간이 종료되었습니다!</div>
+    <div id="endedMessage" class="ended-message" style="display: none;">2025학년도 대학수학능력시험 모두 고생많으셨습니다!</div>
 
     <!-- 버튼 -->
     <button class="message-btn" onclick="showMessage()">메시지 보기</button>
@@ -112,9 +112,9 @@
     </div>
 
     <script>
-        // 열람 기간 시작과 종료 시간 설정 (2024년 11월 10일 20시부터 2024년 11월 14일 23시 59분까지)
+        // 열람 기간 시작과 종료 시간 설정 (2024년 11월 10일 20시부터 2024년 11월 14일 08시 20분까지)
         const startDate = new Date(2024, 10, 9, 20, 0, 0); // 11월 10일 20시
-        const endDate = new Date(2024, 10, 14, 23, 59, 59); // 11월 14일 23시 59분
+        const endDate = new Date(2024, 10, 14, 08, 20, 0); // 11월 14일 08시 20분
 
         function showMessage() {
             // 현재 시간
@@ -127,7 +127,7 @@
                 const hours = Math.floor(countdown / 3600);
                 const minutes = Math.floor((countdown % 3600) / 60);
                 const seconds = countdown % 60;
-                document.getElementById("countdown").innerHTML = `열람 시작까지 남은 시간: ${hours}시간 ${minutes}분 ${seconds}초`;
+                document.getElementById("countdown").innerHTML = `${hours}시간 ${minutes}분 ${seconds}초 뒤에 다시 찾아와 주세요!`;
                 return;
             }
 
