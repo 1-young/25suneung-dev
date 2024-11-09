@@ -33,6 +33,12 @@
         .message-box p {
             margin: 10px 0;
         }
+
+        /* 오류 메시지 스타일 */
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -44,6 +50,7 @@
     
     <!-- 메시지 박스 -->
     <div class="message-box" id="messageBox">
+        <p id="greeting"></p>
         <p>안녕! 원영쌤이야!</p>
         <p>나를 오랫동안 본 친구도 있고 나랑 같이 수업을 들은 친구도 있고 내가 타지에서 기숙사 생활을 해서 거의 보지 못한 친구도 있을 거야. 내가 갈 때마다 자료를 한 바구니씩 준 건 미안해.. ㅎ 이해해 주지..?</p> 
         <p><em>🥹🥹</em></p>
@@ -80,13 +87,23 @@
         <p><strong>멀리서 응원하고 있는 원영쌤이!</strong></p>
     </div>
 
+    <!-- 오류 메시지 박스 -->
+    <div id="errorMessage" class="error-message" style="display: none;">
+        허가된 사람이 아닙니다.
+    </div>
+
     <script>
         function showMessage() {
-            // 메시지 박스를 보이게 설정
-            var messageBox = document.getElementById("messageBox");
-            messageBox.style.display = "block";
-        }
-    </script>
-
-</body>
-</html>
+            // 허용된 이름 목록
+            const allowedNames = ["성원", "하은", "다인", "현민", "규정", "은서", "소민", "연우", "종경", "윤정", "정우", "하나"];
+            
+            // 이름 입력받기
+            var name = prompt("이름을 입력해 주세요:");
+            
+            if (name) {
+                // 이름이 허용된 목록에 있는지 확인
+                if (allowedNames.includes(name)) {
+                    // 이름이 허용된 경우, 인사 메시지 표시
+                    document.getElementById("greeting").innerHTML = name + "아 안녕!";
+                    // 메시지 박스 보이기
+                    document.getElementById("messageBox").
